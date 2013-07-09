@@ -5,7 +5,7 @@
 // @version       <%= pkg.version %>
 // @description   <%= pkg.description %>
 // @grant         GM_xmlhttpRequest
-// @match         *://*.cic.tsinghua.edu.cn/*bks_yxkccj*
+// @include       *://*.tsinghua.edu.cn*bks_yxkccj*
 // ==/UserScript==
 // vim: set nowrap ft= : 
 
