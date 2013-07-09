@@ -1,0 +1,54 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.scratch {
+    background: #fff8f4;
+    width: 20em;
+    height: 4em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 50;
+}
+
+.scratch-content {
+    display: none; /* default to hidden */
+}
+
+.scratch-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 100;
+}
+
+.course {
+    float: left;
+    margin: 1.5em 0 1.5em 1em;
+}
+.course:after {
+    content: '：'
+}
+
+.score {
+    float: right;
+    margin: 1.5em 1em 1.5em 0;
+}
+.score:after {
+    content: ' 分'
+}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
