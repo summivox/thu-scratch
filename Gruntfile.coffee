@@ -143,21 +143,6 @@ module.exports = (grunt) ->
       'concat:aio'
     ]
 
-    # make chrome plugin
-    @template.chrome =
-      files: [
-        {src: 'src/chrome/manifest.json', dest: 'dist/chrome/manifest.json'}
-      ]
-    @copy.chrome =
-      files: [
-        {src: 'build/aio.js', dest: 'dist/chrome/aio.js'}
-        {src: 'images/scratch.png', dest: 'dist/chrome/images/scratch.png'}
-      ]
-    grunt.registerTask 'chrome', [
-      'template:chrome'
-      'copy:chrome'
-    ]
-
     # make userscript
     @template.gm =
       files: [
@@ -180,6 +165,5 @@ module.exports = (grunt) ->
     'pack-all'
     'main'
     'aio'
-    'chrome'
     'gm'
   ]
