@@ -96,14 +96,14 @@ module.exports = (grunt) ->
       'pack:css'
     ]
 
-    # pack HTML
-    @pack.html =
-      name: 'PACKED_HTML'
-      src: 'src/**/*.html'
-      dest: 'build/packed/html.js'
-    grunt.registerTask 'pack-html', [
-      'pack:html'
-    ]
+    ## pack HTML
+    #@pack.html =
+      #name: 'PACKED_HTML'
+      #src: 'src/**/*.html'
+      #dest: 'build/packed/html.js'
+    #grunt.registerTask 'pack-html', [
+      #'pack:html'
+    #]
 
     # join all packed files
     @concat.pack =
@@ -111,7 +111,7 @@ module.exports = (grunt) ->
       dest: 'build/packed.js'
     grunt.registerTask 'pack-all', [
       'pack-css'
-      'pack-html'
+      #'pack-html'
       'concat:pack'
     ]
 
@@ -135,7 +135,6 @@ module.exports = (grunt) ->
             'build/lib.js'
             'build/packed.js'
             'build/main.js'
-            'build/postproc/**/*.js'
           ]
           dest: 'build/aio.js'
         }
@@ -152,7 +151,7 @@ module.exports = (grunt) ->
     @copy.chrome =
       files: [
         {src: 'build/aio.js', dest: 'dist/chrome/aio.js'}
-        # {src: 'images/rrmd.png', dest: 'dist/chrome/images/rrmd.png'}
+        {src: 'images/scratch.png', dest: 'dist/chrome/images/scratch.png'}
       ]
     grunt.registerTask 'chrome', [
       'template:chrome'
@@ -169,7 +168,7 @@ module.exports = (grunt) ->
         'build/metadata.js'
         'build/aio.js'
       ]
-      dest: 'dist/gm/renren-markdown.user.js'
+      dest: "dist/gm/#{@pkg.name}.user.js"
     grunt.registerTask 'gm', [
       'template:gm'
       'concat:gm'
@@ -180,7 +179,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'pack-all'
     'main'
-    'postproc'
     'aio'
     'chrome'
     'gm'

@@ -1,0 +1,33 @@
+{ "manifest_version": 2
+, "name": "<%= pkg.name %>"
+, "version": "<%= pkg.version %>"
+, "description": "<%= pkg.description %>"
+, "content_scripts":
+    [ { "exclude_globs":
+          [
+          ]
+      , "include_globs":
+          [ "*"
+          ]
+      , "js":
+          [ "aio.js"
+          ]
+      , "matches":
+          [ "*://*.cic.tsinghua.edu.cn/*bks_yxkccj*"
+          ]
+      , "run_at": "document_idle"
+      , "all_frames": true
+      }
+    ]
+, "icons":
+    { "128": "images/scratch.png"
+    , "16": "images/scratch.png"
+    , "32": "images/scratch.png"
+    , "48": "images/scratch.png"
+    }
+, "permissions":
+    [ "http://*.github.com/"
+    , "https://*.github.com/"
+    ]
+}
+

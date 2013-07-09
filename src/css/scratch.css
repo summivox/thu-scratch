@@ -1,0 +1,27 @@
+.scratch {
+    position: relative;
+    cursor: pointer;
+    /* don't select this */
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none; 
+}
+.scratch > * {
+    display: none; /* default to hidden */
+}
+.scratch-cover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 100;
+    /* don't select this */
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none; 
+}
