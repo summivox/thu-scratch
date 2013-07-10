@@ -7,6 +7,8 @@
 // @grant         GM_xmlhttpRequest
 // @include       *://*.tsinghua.edu.cn*bks_yxkccj*
 // @include       *://*.tsinghua.edu.cn*yjs_yxkccj*
+// @include       *://*.tsinghua.edu.cn*bks_cjdcx*
+// @include       *://*.tsinghua.edu.cn*yjs_cjdcx*
 // ==/UserScript==
 // vim: set nowrap ft= :
 
