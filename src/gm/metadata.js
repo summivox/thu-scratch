@@ -6,8 +6,9 @@
 // @description   <%= pkg.description %>
 // @grant         GM_xmlhttpRequest
 // @include       *://*.tsinghua.edu.cn*bks_yxkccj*
+// @include       *://*.tsinghua.edu.cn*yjs_yxkccj*
 // ==/UserScript==
-// vim: set nowrap ft= : 
+// vim: set nowrap ft= :
 
 // http://stackoverflow.com/questions/4190442/run-greasemonkey-script-only-once-per-page-load
 // if (window.top != window.self) return;  //don't run on frames or iframes
