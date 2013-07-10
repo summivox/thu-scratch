@@ -25,7 +25,8 @@ scratch.make = do ->
 
     # get bounding rect
     width = $el.innerWidth()
-    height = $el.innerHeight()
+    height = $el.parent().innerHeight()
+    $el.height(height-2)
     {top, left} = $el.offset()
 
     # make canvas
