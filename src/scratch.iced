@@ -19,31 +19,32 @@ scratch.make = do ->
     dy = y2 - y1
     Math.sqrt(dx*dx + dy*dy)
 
-  make = (el) ->
-    el.classList.add 'scratch'
+  make = (targetEl) ->
+    # create scratch wrapper inside target element
+    $el = $(targetEl).wrapInner('<div class="scratch" />').children()
 
-    $el = $(el)
+    # get bounding rect
     width = $el.innerWidth()
     height = $el.innerHeight()
     {top, left} = $el.offset()
 
     # make canvas
     # NOTE: must use HTML attr for size (not CSS)
-    $canvas = $('<canvas class="scratch-cover">').prependTo(el)
+    $canvas = $('<canvas class="scratch-cover">').prependTo($el)
     canvas = $canvas[0]
     canvas.width = width
     canvas.height = height
     context = canvas.getContext '2d'
 
     # initial fill
-    context.fillStyle = '#666'
+    context.fillStyle = scratch.options.fillColor
     context.fillRect 0, 0, width, height
 
     # only reveal content after fill
     $el.children().show()
 
     # line styling
-    context.strokeStyle = '#000'
+    context.strokeStyle = '#000' # arbitrary
     context.lineCap = 'butt'
     context.lineJoin = 'round'
 
@@ -79,7 +80,7 @@ scratch.make = do ->
         if @iid
           clearInterval @iid
           @iid = null
-      
+
       auto: (P) ->
         {x, y} = p = toRel P
         margin = getR(0) * 4
@@ -88,7 +89,7 @@ scratch.make = do ->
           else @start p
         else @stop()
     }
-    
+
     this.push o
     return o # scratch.make
 
