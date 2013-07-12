@@ -7,7 +7,7 @@ scratch = []
 scratch.options = {
   thres: {lo: 3, hi: 7} # path length threshold (anti-aliasing & anti-speeding)
   fps: 30 # redraw frequency
-  r0: 6 # base radius (px)
+  r0: 4.5 # base radius (px)
   fillColor: '#666'
 }
 
