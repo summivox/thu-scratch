@@ -17,8 +17,8 @@ $ ->
     switch
       when s.match /\*+/
         @innerHTML = '谢谢惠顾'
-      when s.match /\d+/
-        i = parseInt s
+      when s.match /[\d\.]+/
+        i = parseFloat s
         if i < 60
           @innerHTML = """<a title="#{i}" style="color:#f00;cursor:default;">再考一次</a>"""
   make = -> scratch.make @
