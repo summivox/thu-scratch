@@ -5,7 +5,7 @@ scratch
 scratch = []
 
 scratch.options = {
-  thres: {lo: 3, hi: 10} # path length threshold (anti-aliasing & anti-speeding)
+  thres: {lo: 3, hi: 7} # path length threshold (anti-aliasing & anti-speeding)
   fps: 30 # redraw frequency
   r0: 6 # base radius (px)
   fillColor: '#666'
@@ -69,6 +69,7 @@ scratch.make = do ->
         @p0 = p0
         @distance = 0 # for deriving speed
         @iid = setInterval (@draw = =>
+          if @distance < scratch.options.thres.lo then return
           speed = @distance / period
           @distance = 0
           context.globalCompositeOperation = 'destination-out'
@@ -79,8 +80,8 @@ scratch.make = do ->
         if @iid
           {x, y} = p
           @distance += hypot @p0, p
-          if @distance > scratch.options.thres.lo then context.lineTo x, y
-          if @distance > scratch.options.thres.hi then @draw()
+          if @distance >= scratch.options.thres.lo then context.lineTo x, y
+          if @distance >= scratch.options.thres.hi then @draw()
           @p0 = p
       stop: ->
         if @iid
@@ -90,11 +91,13 @@ scratch.make = do ->
 
       auto: (P) ->
         {x, y} = p = toRel P
-        margin = getR(0) * 4
-        if -margin < x < width+margin && -margin < y < height+margin
-          if @iid then @path p
-          else @start p
-        else @stop()
+        margin = 2 * scratch.options.thres.hi
+        inRange = (-margin < x < width+margin) && (-margin < y < height+margin)
+        if @iid
+          @path p
+          if !inRange then @stop()
+        else
+          if inRange then @start p
     }
 
     this.push o
