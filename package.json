@@ -1,16 +1,16 @@
 { "name": "thu-scratch"
 , "description": "清华成绩刮刮乐"
 , "version": "0.1.4"
-, "homepage": "https://github.com/smilekzs/thu-scratch"
+, "homepage": "https://github.com/summivox/thu-scratch"
 , "author":
-  { "name": "smilekzs & blahgeek"
+  { "name": "summivox & blahgeek"
   }
 , "repository":
   { "type": "git"
-  , "url": "git://github.com/smilekzs/thu-scratch.git"
+  , "url": "git://github.com/summivox/thu-scratch.git"
   }
 , "bugs":
-  { "url": "https://github.com/smilekzs/thu-scratch/issues"
+  { "url": "https://github.com/summivox/thu-scratch/issues"
   }
 , "licenses":
   [ { "type": "MIT"
