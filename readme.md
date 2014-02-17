@@ -1,5 +1,5 @@
 # THU-Scratch 清华成绩刮刮乐
-_by smilekzs & blahgeek_
+_by summivox & blahgeek_
 
 
 ## Usage
